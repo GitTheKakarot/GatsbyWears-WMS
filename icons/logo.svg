@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="36%" r="72%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#1c1610"/>
+      <stop offset="100%" stop-color="#070709"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="150" y1="120" x2="380" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#f7e596"/>
+      <stop offset="45%"  stop-color="#cda951"/>
+      <stop offset="100%" stop-color="#8a6820"/>
+    </linearGradient>
+    <filter id="aura" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="92" fill="#0a0a0d"/>
+  <rect width="512" height="512" rx="92" fill="url(#bg)"/>
+  <rect x="18" y="18" width="476" height="476" rx="78"
+    fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.35"/>
+
+  <g filter="url(#aura)" fill="none" stroke="url(#gold)"
+     stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <!--
+      Geometric G ring — open at the upper right. Top bar, upper-left
+      chamfer, left edge, lower-left chamfer, bottom bar, lower-right
+      chamfer, right edge up to the mouth.
+    -->
+    <path d="
+      M 322 128
+      L 192 128
+      L 112 204
+      L 112 312
+      L 192 388
+      L 322 388
+      L 362 346
+      L 362 300
+    "/>
+
+    <!--
+      Tongue → growth arrow, one continuous stroke. The crossbar comes in
+      from the ring (right) to the counter (left), then its outer end lifts
+      up-right and shoots out of the mouth as a ↗ arrow. No stroke crosses
+      another, so it always reads 'G + arrow', never a stray letter.
+    -->
+    <path d="
+      M 280 286
+      L 360 286
+      L 424 222
+    "/>
+    <!-- Arrowhead (right-angle, pointing up-right) -->
+    <polyline points="362,222 424,222 424,284"/>
+
+    <!--
+      Double-line accent — a parallel stroke hugging the left curve, the
+      signature 'premium' second line, kept well clear of the arrow.
+    -->
+    <path d="
+      M 176 296
+      L 164 284
+      L 164 232
+      L 196 198
+      L 266 198
+    "/>
+  </g>
+</svg>
